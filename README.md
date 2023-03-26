@@ -33,7 +33,7 @@ For different task and other hyperparameter, you can refer the scripts under the
 
 ## Citation
 @article{dai2023chataug,
-  title={ChatAug: Leveraging ChatGPT for Text Data Augmentation},
+  title={AugGPT: Leveraging ChatGPT for Text Data Augmentation},
   author={Dai, Haixing and Liu, Zhengliang and Liao, Wenxiong and Huang, Xiaoke and Wu, Zihao and Zhao, Lin and Liu, Wei and Liu, Ninghao and Li, Sheng and Zhu, Dajiang and others},
   journal={arXiv preprint arXiv:2302.13007},
   year={2023}
