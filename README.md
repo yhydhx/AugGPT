@@ -23,12 +23,18 @@ In this repo, we combined all the models used in our abalation study. First, you
 
 To run the pretrain Model first:
 
-    python mask_bert.py --task pretrain --cuda {cuda_id} --dataset {dataset_name}  
+    python AugGPT.py --task pretrain --cuda {cuda_id} --dataset {dataset_name}  
 
 To run the model/method with one dataset.:
     
-    python mask_bert.py --task {task_name} --cuda {cuda_id} --dataset {dataset_name} 
+    python AugGPT.py --task {task_name} --cuda {cuda_id} --dataset {dataset_name} 
 
 For different task and other hyperparameter, you can refer the scripts under the **scripts** folder. All the results will saved in result folder. 
 
-
+## Citation
+@article{dai2023chataug,
+  title={ChatAug: Leveraging ChatGPT for Text Data Augmentation},
+  author={Dai, Haixing and Liu, Zhengliang and Liao, Wenxiong and Huang, Xiaoke and Wu, Zihao and Zhao, Lin and Liu, Wei and Liu, Ninghao and Li, Sheng and Zhu, Dajiang and others},
+  journal={arXiv preprint arXiv:2302.13007},
+  year={2023}
+}
