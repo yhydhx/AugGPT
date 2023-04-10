@@ -14,7 +14,7 @@ def load_parameter(args):
 	args.betas = (0,0)
 	args.with_scheduler = False
 	args.with_bc = True
-	args.random_seeds = [2013,2014,2015,2016,2017,2018,2019,2020,2021,2022]
+	args.random_states = [2013,2014,2015,2016,2017,2018,2019,2020,2021,2022]
 	args.top_N_ratios = [0.8,0.7,0.6,0.5,0.4,0.3,0.2]
 	args.mask_layers = [12,10,8,6,4,2,0]
 	args.with_pos = False
