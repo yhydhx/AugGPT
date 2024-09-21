@@ -3,7 +3,7 @@ def load_parameter(args):
 
 	#common parameter 
 
-	args.model_checkpoint = "./save_models/bert-base-cased"
+	args.model_checkpoint = "./save_models/bert-base-uncased"
 
 	args.is_AL = False
 	args.is_continuous = False
@@ -14,7 +14,7 @@ def load_parameter(args):
 	args.betas = (0,0)
 	args.with_scheduler = False
 	args.with_bc = True
-	args.random_states = [2013,2014,2015,2016,2017,2018,2019,2020,2021,2022]
+	args.random_states = [2013,2014,2015]
 	args.top_N_ratios = [0.8,0.7,0.6,0.5,0.4,0.3,0.2]
 	args.mask_layers = [12,10,8,6,4,2,0]
 	args.with_pos = False
@@ -37,7 +37,7 @@ def load_parameter(args):
 	args.novel_test_path = './data/{}/novel_test_data.csv'.format(args.dataset)
 
 
-	if args.dataset == "PubMed20k":
+	if args.dataset == "PubMed20K":
 		args.base_labels = [0,1,2]
 		args.novel_labels = [3,4]
 
@@ -68,49 +68,9 @@ def load_parameter(args):
 		args.id2label = {v:k  for (k,v) in args.label2id.items()}
 
 
-	elif args.dataset == "nicta":
-		args.dev_path = './data/{}/dev.csv'.format(args.dataset)
-		args.novel_val_path = './data/{}/novel_val.csv'.format(args.dataset)
-		args.base_labels = [0,1,2]
-		args.novel_labels = [3,4]
+	elif args.dataset == "amazon":
+		args.base_labels = list(range(21))
+		args.novel_labels = list(range(21,24))
 
-		args.label2id = {
-			'background':0,
-			'other':1 ,
-			'outcome':2,
-			'intervention':3,
-			'population':4
-		}
-		args.id2label = {v:k  for (k,v) in args.label2id.items()}
-	
-	elif args.dataset == "snippets":
-		args.base_labels = [0,1,2,3]
-		args.novel_labels = [4,5,6,7]
-
-		args.label2id = {
-			'business':0,
-			'computers':1,
-			'culture-arts-entertainment':2,
-			'education-science':3,
-			'engineering':4,
-			'health':5,
-			'politics-society':6,
-			'sports':7
-		}
-
-		args.id2label = {v:k  for (k,v) in args.label2id.items()}
-
-	elif args.dataset == "dbpedia14":
-		args.base_labels = [0,1,2,3,4,5,6,7]
-		args.novel_labels = [8,9,10,11,12,13]
-
-		args.label2id = {'Company':0,'EducationalInstitution':1,'Artist':2,'Athlete':3,'OfficeHolder':4,'MeanOfTransportation':5,'Building':6,'NaturalPlace':7,'Village':8,'Animal':9,'Plant':10,'Album':11,'Film':12,'WrittenWork':13}
+		args.label2id = {'label_' + str(i):i for i in range(24)}
 		args.id2label = {v:k for k,v in args.label2id.items()}
-
-	elif args.dataset == "AG_news":
-
-		args.base_labels = [0,1]
-		args.novel_labels = [2,3]
-
-		args.label2id = {'World':0,'Sports':1,'Business':2,'Sci/Tech':3}
-		args.id2label = {0:'World',1:'Sports',2:'Business',3:'Sci/Tech'}

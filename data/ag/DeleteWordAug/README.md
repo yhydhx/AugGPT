@@ -1,0 +1,3 @@
+# DeleteWordAug
+
+Delete word randomly

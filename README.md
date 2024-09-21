@@ -23,13 +23,13 @@ In this repo, we combined all the models used in our abalation study. First, you
 
 To run the pretrain Model first:
 
-    python AugGPT.py --task pretrain --cuda {cuda_id} --dataset {dataset_name}  
+    python AugGPT.py --task pretrain  --dataset {dataset_name}  
 
 To run the model/method with one dataset.:
     
-    python AugGPT.py --task {task_name} --cuda {cuda_id} --dataset {dataset_name} 
+    python AugGPT.py --task AG  --dataset {dataset_name} 
 
-For different task and other hyperparameter, you can refer the scripts under the **scripts** folder. All the results will saved in result folder. 
+
 
 ## Citation
 @article{dai2023chataug,
